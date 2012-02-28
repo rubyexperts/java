@@ -1,0 +1,124 @@
+############################################################################
+--------------------------------------------------------------------
+-----Begin-JData-Run------------------------------------------------
+Jdata Global Settings
+Events BeginDate: 02/26/2012
+Events EndDate: 
+useFutureEventsLimit: false
+useOldEventsLimit: false
+futureEventsLimit: 365
+oldEventsLimit: 365
+daysToDoFullRefresh: 
+Incremental Refresh: true
+restoreFromBackup: false
+SPORTS_CAT_ID: 1
+url_filename_space: 
+url_dirname_space: 
+useLowerCaseDirnames: false
+useLowerCaseFilenames: false
+sendMail: true
+smtp_server: smtp.gmail.com
+smtp_port: 465
+email_to: 
+email_from: 
+useSMTPAuth: true
+SMTP username: 
+logfile: jdata3.log
+appendLog: false
+DatabaseFiles: local_db.ini
+-----Beginning updates and loop over databases at: Sun Feb 26 21:46:27 IST 2012-
+Reading properties for DB 1
+driver: mysql
+server: localhost
+port: 3306
+db: jproj3
+option: 3
+username: root
+useCompression: true
+Database Connection String for database 1: jdbc:mysql://localhost:3306/jproj3?user=root&password=********&useCompression=true&Option=3
+Configuration of database: 1 complete----------------------------
+---Completed-configuration-loop-over-databases-at: Sun Feb 26 21:46:27 IST 2012-
+Beginning update process
+Updating categories
+Performed 0 inserts and 228 updates on 228 for db: 1.
+Updating venues
+Performed 0 inserts and 16413 updates on 16413 for db: 1.
+Updating performers
+Performed 0 inserts and 2301 updates on 2301 for db: 1.
+Updating high sales performers
+Performed 0 inserts and 2311 updates on 2311 for db: 1.
+Updating events
+Performed 0 inserts and 1 updates on 1 for cat number: 1 of 228 = SPORTS TENNIS College (Div I-A and Div I-AA) for db: 1
+Performed 0 inserts and 88 updates on 88 for cat number: 2 of 228 = SPORTS TENNIS Professional (USPTA) for db: 1
+Performed 0 inserts and 16 updates on 16 for cat number: 3 of 228 = SPORTS TENNIS - for db: 1
+Performed 0 inserts and 1 updates on 1 for cat number: 4 of 228 = SPORTS WRESTLING College (Div I-A and Div I-AA) for db: 1
+Performed 0 inserts and 44 updates on 44 for cat number: 5 of 228 = SPORTS WRESTLING WWE for db: 1
+Performed 0 inserts and 10 updates on 10 for cat number: 6 of 228 = SPORTS WRESTLING Other for db: 1
+Performed 0 inserts and 2 updates on 2 for cat number: 7 of 228 = SPORTS OTHER - for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 8 of 228 = SPORTS VOLLEYBALL College (Div I-A and Div I-AA) for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 9 of 228 = SPORTS VOLLEYBALL - for db: 1
+Performed 0 inserts and 5 updates on 5 for cat number: 10 of 228 = SPORTS BOXING - for db: 1
+Performed 0 inserts and 16 updates on 16 for cat number: 11 of 228 = SPORTS SKATING Ice (figure) for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 12 of 228 = SPORTS SKATING Ice (show) for db: 1
+Performed 0 inserts and 75 updates on 75 for cat number: 13 of 228 = SPORTS RODEO - for db: 1
+Performed 0 inserts and 2910 updates on 2910 for cat number: 14 of 228 = SPORTS BASEBALL Professional (MLB) for db: 1
+Performed 0 inserts and 173 updates on 173 for cat number: 15 of 228 = SPORTS BASEBALL College (Div I-A and Div I-AA) for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 16 of 228 = SPORTS BASEBALL - for db: 1
+Performed 0 inserts and 291 updates on 291 for cat number: 17 of 228 = SPORTS BASEBALL Minors (AAA) for db: 1
+Performed 0 inserts and 1 updates on 1 for cat number: 18 of 228 = SPORTS BASEBALL Other for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 19 of 228 = SPORTS BASEBALL Frontier League for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 20 of 228 = SPORTS BASEBALL International League Baseball for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 21 of 228 = SPORTS BASEBALL Pacific Coast League (PCL) for db: 1
+Performed 0 inserts and 196 updates on 196 for cat number: 22 of 228 = SPORTS FOOTBALL College (Div I-A and Div I-AA) for db: 1
+Performed 0 inserts and 1 updates on 1 for cat number: 23 of 228 = SPORTS FOOTBALL Other for db: 1
+Performed 0 inserts and 19 updates on 19 for cat number: 24 of 228 = SPORTS FOOTBALL NFL for db: 1
+Performed 0 inserts and 1 updates on 1 for cat number: 25 of 228 = SPORTS FOOTBALL CFL for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 26 of 228 = SPORTS FOOTBALL AFL for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 27 of 228 = SPORTS FOOTBALL UFL for db: 1
+Performed 0 inserts and 204 updates on 204 for cat number: 28 of 228 = SPORTS BASKETBALL College (Div I-A and Div I-AA) for db: 1
+Performed 0 inserts and 57 updates on 57 for cat number: 29 of 228 = SPORTS BASKETBALL Other for db: 1
+Performed 0 inserts and 867 updates on 867 for cat number: 30 of 228 = SPORTS BASKETBALL Professional (NBA) for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 31 of 228 = SPORTS BASKETBALL Professional (WNBA) for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 32 of 228 = SPORTS GOLF College (Div I-A and Div I-AA) for db: 1
+Performed 0 inserts and 106 updates on 106 for cat number: 33 of 228 = SPORTS GOLF Professional (PGA) for db: 1
+Performed 0 inserts and 4 updates on 4 for cat number: 34 of 228 = SPORTS GOLF - for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 35 of 228 = SPORTS GOLF Womens Professional (LPGA) for db: 1
+Performed 0 inserts and 16 updates on 16 for cat number: 36 of 228 = SPORTS HOCKEY College (Div I-A and Div I-AA) for db: 1
+Performed 0 inserts and 419 updates on 419 for cat number: 37 of 228 = SPORTS HOCKEY Professional (NHL) for db: 1
+Performed 0 inserts and 29 updates on 29 for cat number: 38 of 228 = SPORTS HOCKEY - for db: 1
+Performed 0 inserts and 2 updates on 2 for cat number: 39 of 228 = SPORTS HOCKEY IHL for db: 1
+Performed 0 inserts and 75 updates on 75 for cat number: 40 of 228 = SPORTS HOCKEY AHL for db: 1
+Performed 0 inserts and 14 updates on 14 for cat number: 41 of 228 = SPORTS HOCKEY ECHL for db: 1
+Performed 0 inserts and 5 updates on 5 for cat number: 42 of 228 = SPORTS HOCKEY CHL - Central for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 43 of 228 = SPORTS HOCKEY CHL - Canadian for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 44 of 228 = SPORTS HOCKEY WHL - Western for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 45 of 228 = SPORTS HOCKEY SPHL - Southern for db: 1
+Performed 0 inserts and 56 updates on 56 for cat number: 46 of 228 = SPORTS RACING Auto for db: 1
+Performed 0 inserts and 19 updates on 19 for cat number: 47 of 228 = SPORTS RACING Motorcycle for db: 1
+Performed 0 inserts and 5 updates on 5 for cat number: 48 of 228 = SPORTS RACING Horse for db: 1
+Performed 0 inserts and 88 updates on 88 for cat number: 49 of 228 = SPORTS RACING Truck for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 50 of 228 = SPORTS RACING Boat for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 51 of 228 = SPORTS RACING NASCAR for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 52 of 228 = SPORTS SOCCER College (Div I-A and Div I-AA) for db: 1
+Performed 0 inserts and 312 updates on 312 for cat number: 53 of 228 = SPORTS SOCCER Professional (MLS) for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 54 of 228 = SPORTS SOCCER World Cup for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 55 of 228 = SPORTS SOCCER Other for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 56 of 228 = SPORTS SOCCER Euro Cup (deprecated) for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 57 of 228 = SPORTS SOCCER English Premier League for db: 1
+Performed 0 inserts and 5 updates on 5 for cat number: 58 of 228 = SPORTS SOCCER German Bundesliga for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 59 of 228 = SPORTS SOCCER Argentinian Premier League for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 60 of 228 = SPORTS SOCCER Australian NSL for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 61 of 228 = SPORTS SOCCER Austrian T-Mobile Bundesliga for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 62 of 228 = SPORTS SOCCER Belgian Jupiler League for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 63 of 228 = SPORTS SOCCER Brazilian Serie A for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 64 of 228 = SPORTS SOCCER Croatian Prva HNL for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 65 of 228 = SPORTS SOCCER Czech 1. Gambrinus Liga for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 66 of 228 = SPORTS SOCCER Danish Superliga for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 67 of 228 = SPORTS SOCCER Finnish Veikkausliiga for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 68 of 228 = SPORTS SOCCER French Ligue 1 for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 69 of 228 = SPORTS SOCCER Greek Superleague for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 70 of 228 = SPORTS SOCCER Irish League of Ireland for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 71 of 228 = SPORTS SOCCER Israeli Premier League for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 72 of 228 = SPORTS SOCCER Italian Serie A for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 73 of 228 = SPORTS SOCCER Japanese J1 League for db: 1
+Performed 0 inserts and 0 updates on 0 for cat number: 74 of 228 = SPORTS SOCCER Mexican Primera División for db: 1
