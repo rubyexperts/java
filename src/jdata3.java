@@ -28,11 +28,13 @@ import javax.mail.internet.MimeMessage;
 import javax.xml.namespace.QName;
 
 import com.ticketnetwork.tnwebservices.tnwebservice.v3.ArrayOfCategory;
+import com.ticketnetwork.tnwebservices.tnwebservice.v3.ArrayOfCountry;
 import com.ticketnetwork.tnwebservices.tnwebservice.v3.ArrayOfEvent;
 import com.ticketnetwork.tnwebservices.tnwebservice.v3.ArrayOfPerformer;
 import com.ticketnetwork.tnwebservices.tnwebservice.v3.ArrayOfPerformerPercent;
 import com.ticketnetwork.tnwebservices.tnwebservice.v3.ArrayOfVenue;
 import com.ticketnetwork.tnwebservices.tnwebservice.v3.Category;
+import com.ticketnetwork.tnwebservices.tnwebservice.v3.Country;
 import com.ticketnetwork.tnwebservices.tnwebservice.v3.Event;
 import com.ticketnetwork.tnwebservices.tnwebservice.v3.Performer;
 import com.ticketnetwork.tnwebservices.tnwebservice.v3.PerformerPercent;
@@ -415,6 +417,9 @@ public class jdata3 {
                                 stmt.executeUpdate("REPAIR TABLE backup_venues extended");
                                 stmt.executeUpdate("REPAIR TABLE backup_events extended");
                                 stmt.executeUpdate("REPAIR TABLE backup_performers extended");
+                                //Countries
+                                stmt.executeUpdate("REPAIR TABLE backup_countries extended");
+                                
                                 stmt.executeUpdate("REPAIR TABLE backup_sales extended");
                                 stmt.executeUpdate("REPAIR TABLE backup_geo extended");
                                 stmt.executeUpdate("REPAIR TABLE backup_metadata extended");
@@ -431,6 +436,11 @@ public class jdata3 {
                             stmt.executeUpdate("DROP TABLE IF EXISTS performers");
                             stmt.executeUpdate(create_performers_table);
                             stmt.executeUpdate("insert into performers select * from backup_performers");
+                            //Countries
+                            stmt.executeUpdate("DROP TABLE IF EXISTS countries");
+                            stmt.executeUpdate(create_countries_table);
+                            stmt.executeUpdate("insert into countries select * from backup_countries");
+                            
                             stmt.executeUpdate("DROP TABLE IF EXISTS sales");
                             stmt.executeUpdate(create_sales_table);
                             stmt.executeUpdate("insert into sales select * from backup_sales");
@@ -443,7 +453,10 @@ public class jdata3 {
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempcategories");                           
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempvenues");                           
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempevents");                            
-                            stmt.executeUpdate("DROP TABLE IF EXISTS tempperformers");                          
+                            stmt.executeUpdate("DROP TABLE IF EXISTS tempperformers");  
+                            //Countries
+                            stmt.executeUpdate("DROP TABLE IF EXISTS tempcountries");  
+                            
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempsales");                           
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempgeo");                           
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempmetadata");
@@ -467,6 +480,14 @@ public class jdata3 {
                             stmt.executeUpdate("create index performers_parentchildgrandchild_index using hash on performers (ParentCategoryDescription(120),ChildCategoryDescription(120),GrandchildCategoryDescription(120))");
                             stmt.executeUpdate("create index performers_parentchildgrandchildid_index on performers (ParentCategoryID,ChildCategoryID,GrandchildCategoryID)");
                             stmt.executeUpdate("OPTIMIZE TABLE performers");
+                            //Countries
+                            stmt.executeUpdate("DROP TABLE IF EXISTS backup_countries");
+                            stmt.executeUpdate("RENAME TABLE countries TO backup_countries, tempcountries TO countries;");
+                            stmt.executeUpdate("create index countries_name_index using hash on countries (Name(120))");
+                            stmt.executeUpdate("create index countries_id_index on countries (ID)");
+                            stmt.executeUpdate("create index countries_InternationalPhoneCode_index using hash on countries (InternationalPhoneCode(120))");
+                            stmt.executeUpdate("create index countries_Abbreviation_index on countries (Abbreviation(120))");
+                            stmt.executeUpdate("OPTIMIZE TABLE countries");
                             stmt.executeUpdate("create index sales_name_index using hash on sales (Name(120))");
                             stmt.executeUpdate("create index sales_id_index on sales (ID)");
                             stmt.executeUpdate("create index sales_parent_index using hash on sales (ParentCategoryDescription(120))");
@@ -556,21 +577,32 @@ public class jdata3 {
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempcategories");                           
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempvenues");                           
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempevents");                            
-                            stmt.executeUpdate("DROP TABLE IF EXISTS tempperformers");                          
+                            stmt.executeUpdate("DROP TABLE IF EXISTS tempperformers"); 
+                           //Countries
+                            stmt.executeUpdate("DROP TABLE IF EXISTS tempcountries"); 
+                            
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempsales");                           
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempgeo");                           
                             stmt.executeUpdate("DROP TABLE IF EXISTS tempmetadata");                
                             stmt.executeUpdate(create_categories_table);
                             stmt.executeUpdate(create_venues_table);                 
                             stmt.executeUpdate(create_events_table);                          
-                            stmt.executeUpdate(create_performers_table);                           
+                            stmt.executeUpdate(create_performers_table);  
+                          //Countries
+                            stmt.executeUpdate(create_countries_table);
+                            
                             stmt.executeUpdate(create_sales_table);              
                             stmt.executeUpdate(create_geo_table);                         
                             stmt.executeUpdate(create_metadata_table);
                             stmt.executeUpdate(create_backup_categories_table);
                             stmt.executeUpdate(create_backup_venues_table);                 
                             stmt.executeUpdate(create_backup_events_table);                          
-                            stmt.executeUpdate(create_backup_performers_table);                           
+                            stmt.executeUpdate(create_backup_performers_table);
+
+                            //Countries
+                            stmt.executeUpdate(create_backup_countries_table);
+                            
+                            
                             stmt.executeUpdate(create_backup_sales_table);              
                             stmt.executeUpdate(create_backup_geo_table);                         
                             stmt.executeUpdate(create_backup_metadata_table); 
@@ -580,6 +612,9 @@ public class jdata3 {
                                 stmt.executeUpdate("REPAIR TABLE venues extended");
                                 stmt.executeUpdate("REPAIR TABLE events extended");
                                 stmt.executeUpdate("REPAIR TABLE performers extended");
+                              //Countries
+                                stmt.executeUpdate("REPAIR TABLE countries extended");
+                                
                                 stmt.executeUpdate("REPAIR TABLE sales extended");
                                 stmt.executeUpdate("REPAIR TABLE geo extended");
                                 stmt.executeUpdate("REPAIR TABLE metadata extended");
@@ -587,6 +622,9 @@ public class jdata3 {
                                 stmt.executeUpdate("REPAIR TABLE backup_venues extended");
                                 stmt.executeUpdate("REPAIR TABLE backup_events extended");
                                 stmt.executeUpdate("REPAIR TABLE backup_performers extended");
+                              //Countries
+                                stmt.executeUpdate("REPAIR TABLE backup_countries extended");
+                               
                                 stmt.executeUpdate("REPAIR TABLE backup_sales extended");
                                 stmt.executeUpdate("REPAIR TABLE backup_geo extended");
                                 stmt.executeUpdate("REPAIR TABLE backup_metadata extended");
@@ -1704,6 +1742,171 @@ public class jdata3 {
                  index++;
              } 
              System.runFinalization();
+             /**-----Countries Start----**/
+             //updating Countries
+             System.out.println("Updating Countries");
+             out.println("Updating Countries");
+             log.println("Updating Countries");
+             boolean getCountriesException = false;
+             Country[] countries_array = null;
+             update_date = "" + new java.util.Date() + "";
+             try{
+                        String websiteConfigIDString = props.getProperty("websiteConfigID");
+                        String hasEvent = "";
+                        String numReturned = "";
+                        String parentCategoryID = "";
+                        String childCategoryID = "";
+                        String grandchildCategoryID = "";
+                        String useProxy = props.getProperty("useProxy");
+                        String proxyHost = props.getProperty("proxyHost");
+                        String proxyPort = props.getProperty("proxyPort");
+                        if (Boolean.valueOf(useProxy)) {
+                            Properties systemSettings = System.getProperties();
+                            systemSettings.put("http.proxyHost", proxyHost);
+                            systemSettings.put("http.proxyPort", proxyPort);
+                            System.setProperties(systemSettings);
+
+                        }
+                        TNWebServiceStringInputs tns = new TNWebServiceStringInputs(new URL("http://tnwebservices-test.ticketnetwork.com/TNWebservice/v3.0/TNWebserviceStringInputs.asmx?WSDL"),  new QName("http://tnwebservices.ticketnetwork.com/tnwebservice/v3.0", "TNWebServiceStringInputs"));
+                        TNWebServiceStringInputsSoap tnss = tns.getTNWebServiceStringInputsSoap();
+
+
+                            ArrayOfCountry  array_of_countries = tnss.getCountries(websiteConfigIDString);
+                            if (array_of_countries == null) {
+                                gotException = true;
+                                getPerformersException=true;
+                                throw new Exception("Error - no Countries found");
+                                
+                            }
+
+                            java.util.List<Country> countries_list = array_of_countries.getCountry();
+                            countries_array = countries_list.toArray(new Country[0]);
+        
+                      
+                        if (countries_array.length == 0) {
+                            gotException = true;
+                            getCountriesException=true;
+                            throw new Exception("Error - no Countries found");
+                        }
+                       
+                 
+             }catch(Exception e){
+                        System.out.println("Exception while downloading countries data: " + e);
+                        out.println("Exception while downloading countries data: " + e);
+                        log.println("Exception while downloading countries data: " + e);
+                        gotException = true;
+                        getCountriesException=true;
+             }
+             
+             k=0;
+             while((k < num_dbs) && (!getCountriesException)){ 
+                    try{
+                        Connection conn = null;
+                        PreparedStatement psi = null;
+                        Statement stmt = null;
+                                 try{
+
+                                        conn = getConnectionFromString(db_conn_strings[k]);
+                                        conn.setAutoCommit(false);
+                                        stmt = conn.createStatement();
+                                        
+                                        
+                                        if(incremental_update){
+                                             stmt.executeUpdate("DROP TABLE IF EXISTS backup_countries"); 
+                                             stmt.executeUpdate(create_backup_countries_table);
+                                             stmt.executeUpdate("insert into backup_countries select * from countries");
+                                             psi = conn.prepareStatement("INSERT INTO  countries(ID, Name, InternationalPhoneCode, Abbreviation) VALUES (?,?,?,?)on duplicate key update InternationalPhoneCode=VALUES(InternationalPhoneCode), Abbreviation=VALUES(Abbreviation)");
+                                            
+                                        }else{
+                                            stmt.executeUpdate("DROP TABLE IF EXISTS tempcountries");
+                                            stmt.executeUpdate(create_temp_countries_table);                                      
+                                            psi = conn.prepareStatement("INSERT INTO tempcountries (ID, Name, InternationalPhoneCode, Abbreviation) VALUES (?,?,?,?)");
+                                              
+                                        }
+                                         int rows_affected=0;
+                                        
+                                        
+                                        
+                                        int rows = countries_array.length;
+                                        int i = 0;
+                                        int inserts = 0;
+                                        int updates = 0;
+                         while (i < rows) {
+                        	 int id = countries_array[i].getID();
+                        	 String name = countries_array[i].getName();                            
+                            String internationalPhoneCode = countries_array[i].getInternationalPhoneCode();
+                            String abbreviation = countries_array[i].getAbbreviation();
+
+                            psi.setInt(1, id);
+                            psi.setString(2, name);
+                            psi.setString(3, internationalPhoneCode);
+                            psi.setString(4, abbreviation);
+                        
+                            rows_affected = psi.executeUpdate();
+                                                if(rows_affected != 1) {
+                                                    updates++;
+                                                }else{
+                                                    inserts++;
+                                                            
+                                                }        
+                          
+
+                            i++;
+
+                     
+
+                        }
+                                
+                                        
+                                    if(incremental_update){
+                                    	 
+                                    }else{
+                                        stmt.executeUpdate("DROP TABLE IF EXISTS backup_countries");
+                                        stmt.executeUpdate("RENAME TABLE countries TO backup_countries, tempcountries TO countries;");
+                                        stmt.executeUpdate("create index countries_name_index using hash on countries (Name(120))");
+                                        stmt.executeUpdate("create index countries_id_index on countries (ID)");
+                                        stmt.executeUpdate("create index countries_InternationalPhoneCode_index using hash on countries (InternationalPhoneCode(120))");
+                                        stmt.executeUpdate("create index countries_Abbreviation_index on countries (Abbreviation(120))");
+                                         
+                                    }
+                                        
+                                    stmt.executeUpdate("OPTIMIZE TABLE countries");
+                                    conn.commit();
+                                    System.out.println("Performed " + inserts + " inserts and " + updates + " updates on " + rows + " for db: "+(k+1)+".");
+                                    out.println("Performed " + inserts + " inserts and " + updates + " updates on " + rows + " for db: "+(k+1)+".");
+                                    log.println("Performed " + inserts + " inserts and " + updates + " updates on " + rows + " for db: "+(k+1)+".");
+
+                                  }catch (Exception e) {
+                                            System.out.println("An error occured for database " + (k+1) + ": " + e);
+                                            out.println("An error occured for database " + (k+1) + ": " + e);
+                                            log.println("An error occured for database " + (k+1) + ": " + e);
+                                            gotException = true;
+                                            getPerformersException=true;
+                                            conn.rollback();
+
+                                 }finally{
+                                     
+                                     stmt.close();
+                                     conn.close();
+                                 }
+                                 
+                     }catch (Exception e) {
+                                System.out.println("Error in database " + (k+1) + ": " + e);
+                                out.println("Error in database " + (k+1) + ": " + e);
+                                log.println("Error in database " + (k+1) + ": " + e);
+                                gotException = true;
+                              
+                                    
+                     }
+                     k++;
+            }
+            
+             countries_array=null;
+             System.runFinalization();     
+             
+             //  Countries End
+             
+             /**---Countries End --**/
              
              //take care of events table
                  k=0;
@@ -2108,13 +2311,13 @@ public class jdata3 {
 
 
 
-
-
-
-
-
-
-
+//Countries related
+                    
+                    static String create_backup_countries_table = "CREATE  TABLE IF NOT EXISTS  backup_countries(" + "ID       INTEGER NOT NULL," + "Name          VARCHAR(767) NOT NULL, " + "InternationalPhoneCode     TEXT, " + "Abbreviation     VARCHAR(500) , " + " PRIMARY KEY(ID, Name(200)))"+DB_ENGINE;
+                    
+                    static String create_temp_countries_table = "CREATE  TABLE IF NOT EXISTS  tempcountries(" + "ID       INTEGER NOT NULL," + "Name          VARCHAR(767) NOT NULL, " + "InternationalPhoneCode     TEXT, " + "Abbreviation     VARCHAR(500) , " + " PRIMARY KEY(ID, Name(200)))"+DB_ENGINE;
+                                     
+                    static String create_countries_table = "CREATE  TABLE IF NOT EXISTS  countries(" + "ID       INTEGER NOT NULL," + "Name          VARCHAR(767) NOT NULL, " + "InternationalPhoneCode     TEXT, " + "Abbreviation     VARCHAR(500) , " + " PRIMARY KEY(ID, Name(200)))"+DB_ENGINE;
 
                     public static String replaceStringWithString(String s, String p, String r) {
 
